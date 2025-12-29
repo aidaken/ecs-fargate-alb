@@ -8,3 +8,13 @@ id_ed25519
 node_modules/
 *.tfstate
 *.tfstate.*
+
+
+*.pem
+*.key
+id_ed25519
+id_ed25519.pub
+id_rsa
+id_rsa.pub
+SSH-key
+SSH-key.pub
