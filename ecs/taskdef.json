@@ -1,0 +1,29 @@
+{
+  "family": "ecs-fargate-alb",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "__EXEC_ROLE_ARN__",
+  "containerDefinitions": [
+    {
+      "name": "app",
+      "image": "__IMAGE__",
+      "essential": true,
+      "portMappings": [
+        { "containerPort": 3000, "protocol": "tcp" }
+      ],
+      "environment": [
+        { "name": "PORT", "value": "3000" }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-region": "__AWS_REGION__",
+          "awslogs-group": "__LOG_GROUP__",
+          "awslogs-stream-prefix": "app"
+        }
+      }
+    }
+  ]
+}
