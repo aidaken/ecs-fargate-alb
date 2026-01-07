@@ -129,7 +129,7 @@ No AWS resources should remain active after this.
 
 This repository does not contain AWS access keys, secrets, passwords, or tokens:)
 All sensitive values are resolved at runtime using AWS CLI and IAM roles.
-
+For simplicity, the deploy script uses broad permissions for the deployment user. The ECS task execution role is restricted to ECR auth + CloudWatch log writes.
 ---
 
 ## Why this project exists
